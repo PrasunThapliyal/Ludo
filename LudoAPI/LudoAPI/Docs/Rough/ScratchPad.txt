@@ -1,0 +1,106 @@
+﻿
+(#) Lets use the terms Multi-client and single-client
+		Multi-user will create confusion in this scenario
+(#) Multi-client is a must for this, 
+	even though it should be possible (and default) to 
+	play this by passing the phone/tab around
+(#) Authentication / Login will seem like a burden
+	But there should be a lightweight login for the duration of the game to facilitate multi-client
+(#) Lets allow a new user to join anytime during the game, will be fun
+		Only for multi-client
+(#) Live voice call will be cool, but I dont have the tech !! specially to add it in a lightweight manner
+	Live video in each of the Home will be very cool too
+(#) Actors
+		Player
+		Pin (the dot that moves)
+		Dice
+(#) Infra
+		Room / Group (for multi-client environment)
+		Mode: 
+			Multi-client: Each player uses his own device
+			Single client: All players use a single device
+(#) There are (4) + (13 x 4) hops to cover for a pin to reach Destination from the start position
+(#) So lets say there are 4 players, and each player has 4 pins.
+	Let the hops be from Home through Start to Destination
+		Let 0 represent Home
+			1 represent Start 
+			57 represent Destination
+	Let Position[x, y] represent the position of Player X's Pin Y
+(#) Home to Start could be navigated either via a 6 or a 1. Then you need to cover exactly 56 hops.
+
+API(s)
+---------
+(#) POST /api/v1/ludo [Start a single client game]
+	Body: { players: [ "Bob", "Lisa", "Tom" ] }
+	Response: 
+	{
+		groupId: "123423512",
+		players: [
+			{
+				name: "Bob",
+				id: 1,
+				color: "Yellow",
+				status: "Playing"
+			},
+			...
+		]
+	}
+(#) POST /api/v1/ludo [Create a room for multi-client game]
+	Body: { name: "Bob", group: "Lets Play Ludo" }
+	Response: { group: "Lets Play Ludo", groupId: "123423512", players: [bob] }
+	POST /api/v1/ludo [Join a group]
+	Body: { name: "Lisa", groupId: "123423512" }
+	Response: { group: "Lets Play Ludo", groupId: "123423512", players: [bob, lisa] }
+(#) GET /api/v1/status/{groupId}
+	Response: { groupId: "12131342", status: "Playing", currentPlayer: { id: 1, diceValue: 0 } }
+---------
+(#) GET /api/v1/player
+(#) GET /api/v1/player/id
+(#) GET /api/v1/player?include=pins
+(#) GET /api/v1/player/id?include=pins
+(#) POST /api/v1/player/id/dice [Roll the dice - get the new number, dont apply yet]
+(#) GET /api/v1/player/id/movablepins [Get the pins on which the current dice value can be applied]
+		Note: Should not include diceValue as an input to prevent misuse
+(#) POST /api/v1/player/id/pin/pinId [Apply the current dice value to the selected pin]
+(#) POST /api/v1/reset
+
+
+---------
+
+(#) GET /api/v1/player
+	Get all players
+	Response
+		{
+			players: [
+				{
+					name: "Player 1",
+					id: 1,
+					color: "Yellow",
+					status: One of { Disabled, Playing, Completed }
+					score: One of { NA, First, Second, Third, Fourth }
+				}
+			]
+		}
+
+(#) GET /api/v1/player/1
+	Get player with id = 1
+
+(#) GET /api/v1/player?include=pins
+	Response
+		{
+			players: [
+				{
+					name: "Player 1",
+					position: 1,
+					pins: [
+						{
+							id: 1,
+							position: 0
+						},
+						..
+					]
+				},
+				..
+			]
+		}
+

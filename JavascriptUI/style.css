@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fbfbfb;
+}
+
+.wrapper {
+  background: cadetblue;
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-rows: repeat(15, 1fr);
+  grid-template-columns: repeat(15, 1fr);
+}
+.item {
+  /* background: #58d5f6; */
+  color: white;
+  padding: 10px;
+  border: 1px solid gainsboro;
+}
+/* 
+.item:nth-child(even) {
+  background: #236fc8;
+} */
+
+.green-player-home {
+  background: green;
+  grid-area: 1/1 / span 6 / span 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.red-player-home {
+  background: red;
+  grid-area: 1/10 / span 6 / span 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blue-player-home {
+  background: blue;
+  grid-area: 10/10 / span 6 / span 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yellow-player-home {
+  background: yellow;
+  grid-area: 10/1 / span 6 / span 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item.green-start {
+  background: green;
+}
+
+.item.green-finish {
+  background: green;
+}
+
+.item.green-freewalk {
+  background: green;
+}
+
+.item.red-start {
+  background: red;
+}
+
+.item.red-finish {
+  background: red;
+}
+
+.item.red-freewalk {
+  background: red;
+}
+
+.item.blue-start {
+  background: blue;
+}
+
+.item.blue-finish {
+  background: blue;
+}
+
+.item.blue-freewalk {
+  background: blue;
+}
+
+.item.yellow-start {
+  background: yellow;
+  color: grey;
+}
+
+.item.yellow-finish {
+  background: yellow;
+  color: grey;
+}
+
+.item.yellow-freewalk {
+  background: yellow;
+  color: grey;
+}
+
+.item.star {
+  background: mediumaquamarine;
+}
+
+.green-helipad {
+  background: whitesmoke;
+  grid-area: 2/2 / span 4 / span 4;
+}
+
+.four-pads {
+  display: grid;
+  background-color: white;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pad {
+  padding: 10px;
+  /*border: 1px solid gainsboro;*/
+}
+.shadow {
+  -webkit-box-shadow: 1px 1px 2px 2px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 1px 1px 2px 2px #ccc; /* Firefox 3.5 - 3.6 */
+  box-shadow: 1px 1px 2px 2px rgb(95, 91, 91); /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.dot {
+  height: 50px;
+  width: 50px;
+
+  border-radius: 50%;
+  display: inline-block;
+}
+.green {
+  background-color: green;
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.blue {
+  background-color: blue;
+}

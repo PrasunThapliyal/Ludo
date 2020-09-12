@@ -1,0 +1,6 @@
+CSS Grid Layout Crash Course
+Traversy Media
+https://www.youtube.com/watch?v=jV8B24rSN5o
+
+Source Code: https://www.youtube.com/redirect?redir_token=QUFFLUhqblVDQUF6NGdKM3FfVEJhNFFoR3Q0RDhydFZWZ3xBQ3Jtc0tuNDktdHQxU0Z6ZlpEb05Ia3ZWMXpPMTJHdzl4SWVfM2VjX2gxNUJHNHY1WFRHOTFFNm9aSGJDM3dwY2ZaMnFyNEoxcFNvNU85R1JJZ1hNRU1GQWNtTGR5WGdZMVJ4b242VlcyS2RkRVdMaVpPNXJ4cw%3D%3D&v=jV8B24rSN5o&q=http%3A%2F%2Fwww.traversymedia.com%2Fdownloads%2Fcssgrid.zip&event=video_description
+

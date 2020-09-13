@@ -14,7 +14,7 @@ body {
   height: 90%;
   margin: 0 auto;
   display: grid;
-  grid-gap: 1px;
+  grid-gap: 0px;
   grid-template-rows: repeat(15, 1fr);
   grid-template-columns: repeat(15, 1fr);
 }
@@ -67,6 +67,7 @@ body {
 
 .item.green-finish {
   background: green;
+  border: 0px;
 }
 
 .item.green-freewalk {
@@ -79,6 +80,7 @@ body {
 
 .item.red-finish {
   background: red;
+  border: 0px;
 }
 
 .item.red-freewalk {
@@ -91,6 +93,7 @@ body {
 
 .item.blue-finish {
   background: blue;
+  border: 0px;
 }
 
 .item.blue-freewalk {
@@ -105,6 +108,7 @@ body {
 .item.yellow-finish {
   background: yellow;
   color: grey;
+  border: 0px;
 }
 
 .item.yellow-freewalk {
@@ -114,6 +118,9 @@ body {
 
 .item.star {
   background: mediumaquamarine;
+  border-radius: 30%;
+  display: inline-block;
+  border: 1px;
 }
 
 .green-helipad {
@@ -156,4 +163,53 @@ body {
 }
 .blue {
   background-color: blue;
+}
+.diagonal-split-greenred {
+  /*background-color: green;
+  background-image: -webkit-linear-gradient(45deg, green 50%, red 50%);*/
+  background: linear-gradient(
+    to top right,
+    green calc(50% - 0.8px),
+    red calc(50% + 0.8px)
+  );
+  border: 0px;
+}
+.diagonal-split-redblue {
+  /*background-color: red;
+  background-image: -webkit-linear-gradient(135deg, blue 50%, red 50%);*/
+  background: linear-gradient(
+    to top left,
+    blue calc(50% - 0.8px),
+    red calc(50% + 0.8px)
+  );
+  border: 0px;
+}
+.diagonal-split-greenyellow {
+  /*background-color: green;
+  background-image: -webkit-linear-gradient(135deg, yellow 50%, green 50%);*/
+  background: linear-gradient(
+    to top left,
+    yellow calc(50% - 0.8px),
+    green calc(50% + 0.8px)
+  );
+  border: 0px;
+}
+.diagonal-split-yellowblue {
+  /*background-color: yellow;
+  background-image: -webkit-linear-gradient(45deg, yellow 50%, blue 50%);*/
+  background: linear-gradient(
+    to top right,
+    yellow calc(50% - 0.8px),
+    blue calc(50% + 0.8px)
+  );
+  border: 0px;
+}
+
+.wrapperHome {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  border: 0px;
 }
